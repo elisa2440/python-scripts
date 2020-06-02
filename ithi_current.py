@@ -72,13 +72,17 @@ for poc in lista_sin_dup:
     if len(all) > 0:
         info_anterior[poc] = set([all[-1][0], all[-1][1], all[-1][2]])
 
+print(lista_sin_dup)
+print(info_actual.keys())
+print(info_anterior.keys())
 
 cant_pocs_current = []
 for poc in lista_sin_dup:
-    print(info_actual[poc], info_anterior[poc])
-    diff = info_actual[poc].difference(info_anterior[poc])
-    if len(diff) > 0:
-        cant_pocs_current.append(poc)
+    if poc in info_anterior.keys() and poc in info_actual.keys():
+        print(info_actual[poc], info_anterior[poc])
+        diff = info_actual[poc].difference(info_anterior[poc])
+        if len(diff) > 0:
+            cant_pocs_current.append(poc)
 
 print(len(lista_sin_dup), len(cant_pocs_current))
 
