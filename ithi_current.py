@@ -59,7 +59,7 @@ for poc in lista_sin_dup:
     if len(all) > 0:
         ultima_actualizacion = all[-1][0]
         hace = (hoy - ultima_actualizacion).days/365.0
-        print ("hace")
+        print (hace)
         tiempos_hace.append(hace)
         if hace < 5:
             info_actual[poc] = set([all[-1][1], all[-1][2], all[-1][3]])
@@ -75,6 +75,7 @@ for poc in lista_sin_dup:
 
 cant_pocs_current = []
 for poc in lista_sin_dup:
+    print(info_actual[poc], info_anterior[poc])
     diff = info_actual[poc].difference(info_anterior[poc])
     if len(diff) > 0:
         cant_pocs_current.append(poc)
