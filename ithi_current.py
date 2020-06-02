@@ -15,7 +15,12 @@ legados = open("legadosSinRE.csv", "r").readlines()
 
 # Connecting to LACNIC's DB
 
-db = pymysql.connect("dbint.lacnic.net.uy","rpki","RpK1%;.","lacnic" )
+server = "server"
+user = "user"
+password = "pass"
+database = "db"
+
+db = pymysql.connect(server, user, password, database)
 cursor = db.cursor()
 cursor2 = db.cursor()
 cursor3 = db.cursor()
