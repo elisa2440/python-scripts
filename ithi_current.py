@@ -70,7 +70,7 @@ for poc in lista_sin_dup:
     cursor2.execute("select nome, email, tel_numero from usuario_historico where handle_usuario = '%s' " % str(poc))
     all = cursor2.fetchall()
     if len(all) > 0:
-        info_anterior[poc] = set([all[-1][1], all[-1][2], all[-1][3]])
+        info_anterior[poc] = set([all[-1][0], all[-1][1], all[-1][2]])
 
 
 cant_pocs_current = []
