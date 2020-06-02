@@ -75,7 +75,7 @@ for poc in lista_sin_dup:
 
 cant_pocs_current = []
 for poc in lista_sin_dup:
-    diff = info_actual.difference(info_anterior)
+    diff = info_actual[poc].difference(info_anterior[poc])
     if len(diff) > 0:
         cant_pocs_current.append(poc)
 
